@@ -23,13 +23,26 @@ function NewYork ({ weather }: CityPageProps) {
 }
 
 
-export async function getStaticProps() {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_WEATHER_API_URL}?q=new york&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`)
-    const weather = await response.json()
+export async function getStaticProps({ store }: any) {
 
-    return {
-        props: {weather},
+    try {
+        // store.dispatch(fetchWeatherRequest())
+        const response = await fetch(`${process.env.NEXT_PUBLIC_WEATHER_API_URL}?q=new york&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`)
+        const weather = await response.json();
+
+        // store.dispatch(fetchWeatherSuccess(weather))
+
+        return {
+            props: {weather},
+        }
+    } catch (e: any) {
+        console.log(e);
+        // store.dispatch(fetchWeatherFailure(e.message))
+        return {
+            props: {},
+        }
     }
+
 }
 
 export default NewYork

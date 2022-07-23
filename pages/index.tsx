@@ -5,7 +5,7 @@ const Home: () => void = () => {
     const router = useRouter();
 
     useEffect(() => {
-        router.push('/berlin').then(r => r);
+        router.push('/new-york').then(r => r);
     }, []);
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import {useRouter} from "next/router";
+import {WeatherInfo} from "./WeatherInfo";
 
 export function CityNavigation() {
 
@@ -33,3 +34,5 @@ export function CityNavigation() {
         </>
     )
 }
+
+React.memo(CityNavigation)

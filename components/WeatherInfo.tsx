@@ -29,5 +29,3 @@ export function WeatherInfo( {data}: WeatherInfoProps ) {
 }
 
 React.memo(WeatherInfo)
-
-// https://api.openweathermap.org/data/2.5/forecast?q=yerevan&units=metric&appid=c1330edc9c89c4197393d812de0ee58b
